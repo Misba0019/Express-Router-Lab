@@ -78,3 +78,15 @@ This project is ideal for:
 - Understanding route-level middleware (admin protection)
 - Learning how to connect MongoDB with Mongoose
 - Comparing persistent (MongoDB) vs. mock in-memory data
+
+---
+
+## Feedback
+
+If this project helped you learn or practice Express routing patterns, feel free to star the repo or use it as a base for your own ideas.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE)
