@@ -8,11 +8,12 @@ This project is intentionally lightweight and built as a **learning-focused mini
 
 ## Features
 
-- Clean, modular route structure with `express.Router()`
-- MongoDB integration with Mongoose (`/dogs` resource)
-- Route-level middleware protection for admin-only routes
+- Modular routing with `express.Router()`
+- MongoDB integration with Mongoose (`/dogs`)
+- Middleware-protected admin routes
+- JSON-based API responses
 - In-memory mock routes for `/shelters`
-- Basic logging and catch-all 404 handler
+- Basic request logging and 404 handler
 - Lightweight and educational backend starter
 
 ---
@@ -20,18 +21,18 @@ This project is intentionally lightweight and built as a **learning-focused mini
 ## Routes & App Flow
 
 ### Dogs (MongoDB-backed)
-- `GET /dogs` – View all dogs
+- `GET /dogs` – View all dogs *(JSON response)*
 - `POST /dogs` – Add a new dog (`name`, `age`, `breed`)
-- `GET /dogs/:id` – View a dog by ID
+- `GET /dogs/:id` – View a dog by ID *(JSON response)*
 
 ### Shelters (In-memory)
-- `GET /shelters` – View all shelters
+- `GET /shelters` – View all shelters *(JSON response)*
 - `POST /shelters` – Add a new shelter
-- `GET /shelters/:id` – View a shelter by ID
+- `GET /shelters/:id` – View a shelter by ID *(JSON response)*
 
 ### Admin (Middleware protected)
 - `GET /admin/dashboard?isAdmin=true` – Admin dashboard with internal links
-- `GET /admin/stats?isAdmin=true` – View mock app stats
+- `GET /admin/stats?isAdmin=true` – View mock app stats *(JSON response)*
 - `GET /admin/maintenance?isAdmin=true` – Simulate maintenance tasks
 
 > All `/admin` routes require `?isAdmin=true` in the query string.
@@ -78,6 +79,17 @@ This project is ideal for:
 - Understanding route-level middleware (admin protection)
 - Learning how to connect MongoDB with Mongoose
 - Comparing persistent (MongoDB) vs. mock in-memory data
+
+---
+
+## Project Structure
+
+- `index.js` – Main Express app setup, route registration, DB connection
+- `routes/dogs.js` – MongoDB-backed routes for dogs (GET, POST, :id)
+- `routes/shelters.js` – In-memory route examples for shelter endpoints
+- `routes/admin.js` – Middleware-protected admin-only routes
+- `models/dogs.js` – Mongoose schema and model for Dog
+- `seeds.js` – Script to populate the database with sample dog data
 
 ---
 
